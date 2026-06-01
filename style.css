@@ -1047,11 +1047,15 @@ a {
   gap: 2px;
 }
 
-.mcard__item { display: flex; }
+.mcard__item {
+  display: flex;
+  width: 100%;
+  min-width: 0; /* critical: allows flex children to shrink below content size */
+}
 
 .mcard__link {
   display: flex;
-  align-items: center;
+  align-items: flex-start; /* top-align icon when text wraps to 2 lines */
   gap: 8px;
   font-size: 0.82rem;
   font-weight: 500;
@@ -1060,14 +1064,24 @@ a {
   border-radius: var(--radius-sm);
   text-decoration: none;
   width: 100%;
+  min-width: 0; /* allows text node to shrink */
+  white-space: normal; /* never prevent wrapping */
+  word-break: break-word; /* break long URLs/words if needed */
+  overflow-wrap: break-word;
   transition: background 0.18s, color 0.18s;
+  line-height: 1.45;
 }
+
 .mcard__link:hover {
   background: rgba(255, 255, 255, 0.10);
   color: #fff;
 }
 
-.mcard__file-icon { font-size: 0.9rem; flex-shrink: 0; line-height: 1; }
+.mcard__file-icon {
+  font-size: 0.9rem;
+  flex-shrink: 0; /* never squish the icon */
+  line-height: 1.45; /* vertically aligns with first text line */
+}
 
 /* Extra (hidden) items — smooth height expand */
 .mcard__item--extra {
@@ -1081,7 +1095,7 @@ a {
     height             0.32s var(--ease-out),
     opacity            0.28s var(--ease-out);
   opacity: 0;
-  
+
 }
 .mcard__item--extra > .mcard__link {
   min-height: 0;
