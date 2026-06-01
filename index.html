@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FeBelajar — Dokumentasi Materi Kuliah</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════ NAVBAR -->
+  <header class="navbar" id="navbar" role="banner">
+    <a href="#hero" class="navbar__logo" aria-label="FeBelajar beranda">FeBelajar</a>
+
+    <button class="navbar__burger" id="burgerBtn" aria-label="Buka menu" aria-expanded="false" aria-controls="navMenu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="navbar__menu" id="navMenu" role="navigation" aria-label="Navigasi utama">
+      <a href="#hero" class="navbar__link is-active">Home</a>
+      <a href="#materials" class="navbar__link">Materi</a>
+      <a href="#contact" class="navbar__link">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════ HERO -->
+  <section class="hero" id="hero" aria-label="Beranda">
+
+    <!-- decorative grid lines -->
+    <div class="hero__grid" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <!-- decorative circles -->
+    <div class="hero__orb hero__orb--1" aria-hidden="true"></div>
+    <div class="hero__orb hero__orb--2" aria-hidden="true"></div>
+
+    <div class="hero__inner">
+
+      <!-- LEFT: branding + cta -->
+      <div class="hero__left" data-reveal>
+        <div class="hero__eyebrow">
+          <span class="hero__eyebrow-dot"></span>
+          Platform Akademik Digital
+        </div>
+
+        <h1 class="hero__title">Fe<span class="hero__title-accent">Belajar</span></h1>
+
+        <p class="hero__tagline">"Dokumentasi &amp; Ruang Berbagi Materi Kuliah"</p>
+
+        <p class="hero__desc">
+          Arsip akademik digital dan catatan studi selama perkuliahan di Institut Teknologi Sepuluh Nopember (ITS).
+        </p>
+
+        <div class="hero__cta-row">
+          <a href="#materials" class="btn btn--primary" id="ctaBtn">
+            Pilih Mata Kuliah
+            <svg class="btn__icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M5 10h10M11 6l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+
+        <div class="hero__stats" aria-label="Statistik platform">
+          <div class="hero__stat">
+            <strong>120+</strong>
+            <span>Dokumen</span>
+          </div>
+          <div class="hero__stat-divider" aria-hidden="true"></div>
+          <div class="hero__stat">
+            <strong>18</strong>
+            <span>Mata Kuliah</span>
+          </div>
+          <div class="hero__stat-divider" aria-hidden="true"></div>
+          <div class="hero__stat">
+            <strong>400+</strong>
+            <span>Mahasiswa</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: profile card -->
+      <div class="hero__right" data-reveal data-reveal-delay="150">
+        <div class="hero__card">
+
+          <!-- corner accents -->
+          <span class="hero__card-corner hero__card-corner--tl" aria-hidden="true"></span>
+          <span class="hero__card-corner hero__card-corner--tr" aria-hidden="true"></span>
+          <span class="hero__card-corner hero__card-corner--bl" aria-hidden="true"></span>
+          <span class="hero__card-corner hero__card-corner--br" aria-hidden="true"></span>
+
+          <div class="hero__photo-wrap">
+            <div class="hero__photo-frame" aria-hidden="true"></div>
+            <img
+              class="hero__photo"
+              src="Assets/Khamim.jpg"
+              alt="Foto profil mahasiswa"
+              loading="eager"
+              width="200"
+              height="200"
+            />
+            <div class="hero__photo-badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+              </svg>
+            </div>
+          </div>
+
+          <div class="hero__profile">
+            <h2 class="hero__name">Mohammad Febryan Khamim</h2>
+            <p class="hero__dept">Mahasiswa Departemen Matematika ITS</p>
+
+            <div class="hero__divider" aria-hidden="true"></div>
+
+            <div class="hero__btn-row">
+              <a href="Assets/CV.pdf" class="btn btn--cv" aria-label="Unduh CV Mohammad Febryan Khamim">
+                <svg class="btn__icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M10 3v10M5 13l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M3 17h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                Unduh CV
+              </a>
+              <a href="https://khamim-site.vercel.app/" class="btn btn--portfolio" aria-label="Lihat Portofolio Utama">
+                Portofolio Utama
+                <svg class="btn__icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M5 10h10M11 6l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+        </div><!-- /hero__card -->
+      </div><!-- /hero__right -->
+
+    </div><!-- /hero__inner -->
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════ MATERIALS -->
+  <section class="materials" id="materials" aria-label="Materi Kuliah">
+
+    <div class="materials__header" data-reveal>
+      <span class="materials__eyebrow">Perpustakaan Digital</span>
+      <h2 class="materials__title">Materi &amp; Dokumen Kuliah</h2>
+      <p class="materials__sub">Catatan, modul, dan sumber belajar terkurasi — dapat dicari dan difilter langsung.</p>
+    </div>
+
+    <div class="materials__layout">
+
+      <!-- ── SIDEBAR ── -->
+      <aside class="sidebar" id="sidebar" aria-label="Filter dan pencarian">
+        <div class="sidebar__card">
+
+          <!-- Search -->
+          <div class="sidebar__search-wrap">
+            <svg class="sidebar__search-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M14 14l3 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+            <input
+              class="sidebar__search"
+              id="searchInput"
+              type="search"
+              placeholder="Cari judul atau kata kunci..."
+              autocomplete="off"
+              aria-label="Cari materi"
+            />
+            <button class="sidebar__search-clear" id="searchClear" aria-label="Hapus pencarian" hidden>
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Filter tags -->
+          <div class="sidebar__section">
+            <p class="sidebar__label">Filter Kategori</p>
+            <div class="sidebar__tags" id="filterTags" role="group" aria-label="Filter kategori">
+              <button class="stag is-active" data-filter="semua">Semua</button>
+              <button class="stag" data-filter="semester-1">Semester 1</button>
+              <button class="stag" data-filter="semester-2">Semester 2</button>
+              <button class="stag" data-filter="mahasiswa">Mahasiswa</button>
+              <button class="stag" data-filter="siswa-sma">Siswa SMA</button>
+            </div>
+          </div>
+
+          <!-- About platform -->
+          <div class="sidebar__section sidebar__about">
+            <p class="sidebar__label">Tentang Platform</p>
+            <p class="sidebar__about-text">
+              FeBelajar adalah arsip akademik hasil belajar dari mahasiswa Departemen Matematika ITS dan bebas diakses oleh siapapun yang membutuhkan. 
+            </p>
+            <div class="sidebar__about-stats">
+              <span><strong>120+</strong> Dokumen</span>
+              <span><strong>18</strong> Mata Kuliah</span>
+            </div>
+          </div>
+
+        </div>
+      </aside>
+
+      <!-- ── CARDS GRID ── -->
+      <div class="mat-grid" id="matGrid" role="list" aria-live="polite" aria-label="Daftar materi">
+
+        <!-- ─ CARD 1: Matematika 1 (has GitHub) ─ -->
+        <article class="mcard" role="listitem"
+          data-category="semester-1 mahasiswa"
+          data-keywords="kompleks kalkulus limit turunan integral fungsi deret matematika"
+          data-title="Matematika 1">
+
+          <div class="mcard__ribbon">Semester 1 · Mahasiswa</div>
+
+          <div class="mcard__body">
+            <p class="mcard__meta">Mahasiswa &nbsp;·&nbsp; Institut Teknologi Sepuluh Nopember</p>
+            <h3 class="mcard__title">Matematika 1</h3>
+            <p class="mcard__desc">Catatan lengkap perkuliahan Matematika 1 ITS 2022/2023 — mencakup fungsi, bilangan kompleks, matriks, kalkulus, dan sebagainya.</p>
+
+            <div class="mcard__kw" aria-label="Kata kunci">
+              <span class="mkw">Matematika</span>
+              <span class="mkw">Limit</span>
+              <span class="mkw">Turunan</span>
+              <span class="mkw">Integral</span>
+              <span class="mkw">Deret</span>
+            </div>
+
+            <div class="mcard__materi">
+              <p class="mcard__materi-label">Daftar Materi</p>
+              <ul class="mcard__list" aria-label="Daftar materi Kalkulus 1">
+                <li class="mcard__item">
+                  <a href="https://github.com/mfebkhamim/Catatan-Kuliah/tree/main/Matematika%201/Kumpulan%20Soal" class="mcard__link" target="_blank" rel="noopener">
+                    <span class="mcard__file-icon" aria-label="Google Drive">🔗</span>
+                    Kumpulan Soal
+                  </a>
+                </li>
+                <li class="mcard__item">
+                  <a href="Dokumen/Matematika 1/Tugas 2 - Bilangan Kompleks.pdf" class="mcard__link" target="_blank" rel="noopener">
+                    <span class="mcard__file-icon" aria-label="PDF">📄</span>
+                    Tugas 2 - Bilangan Kompleks
+                  </a>
+                </li>
+                <li class="mcard__item">
+                  <a href="Dokumen/Matematika 1/Tugas 3 - Matriks.pdf" class="mcard__link" target="_blank" rel="noopener">
+                    <span class="mcard__file-icon" aria-label="PDF">📄</span>
+                    Tugas 3 - Matriks
+                  </a>
+                </li>
+                <!-- hidden extras -->
+                <li class="mcard__item mcard__item--extra">
+                  <a href="Dokumen/Matematika 1/Tugas 4 - Matriks.pdf" class="mcard__link" target="_blank" rel="noopener">
+                    <span class="mcard__file-icon" aria-label="PDF">📄</span>
+                    Tugas 4 - Matriks
+                  </a>
+                </li>
+                <li class="mcard__item mcard__item--extra">
+                  <a href="Dokumen/Matematika 1/Tugas 5 - Fungsi.pdf" class="mcard__link" target="_blank" rel="noopener">
+                    <span class="mcard__file-icon" aria-label="PDF">📄</span>
+                    Tugas 5 - Fungsi
+                  </a>
+                </li>
+                <li class="mcard__item mcard__item--extra">
+                  <a href="Dokumen/Matematika 1/Tugas 5 - Fungsi.pdf" class="mcard__link" target="_blank" rel="noopener">
+                    <span class="mcard__file-icon" aria-label="PDF">📄</span>
+                    Tugas 6 - Turunan
+                  </a>
+                </li>
+                <li class="mcard__item mcard__item--extra">
+                  <a href="Dokumen/Matematika 1/Tugas 5 - Fungsi.pdf" class="mcard__link" target="_blank" rel="noopener">
+                    <span class="mcard__file-icon" aria-label="PDF">📄</span>
+                    Tugas 7 - Turunan
+                  </a>
+                </li>
+                <li class="mcard__item mcard__item--extra">
+                  <a href="Dokumen/Matematika 1/Tugas 5 - Fungsi.pdf" class="mcard__link" target="_blank" rel="noopener">
+                    <span class="mcard__file-icon" aria-label="PDF">📄</span>
+                    Tugas 8 - Turunan Implisit
+                  </a>
+                </li>
+                <li class="mcard__item mcard__item--extra">
+                  <a href="Dokumen/Matematika 1/Tugas 5 - Fungsi.pdf" class="mcard__link" target="_blank" rel="noopener">
+                    <span class="mcard__file-icon" aria-label="PDF">📄</span>
+                    Tugas 9 - Aplikasi Turunan
+                  </a>
+                </li>
+                <li class="mcard__item mcard__item--extra">
+                  <a href="Dokumen/Matematika 1/Tugas 5 - Fungsi.pdf" class="mcard__link" target="_blank" rel="noopener">
+                    <span class="mcard__file-icon" aria-label="PDF">📄</span>
+                    Tugas 10 - Aplikasi Turunan
+                  </a>
+                </li>
+                <li class="mcard__item mcard__item--extra">
+                  <a href="Dokumen/Matematika 1/Tugas 5 - Fungsi.pdf" class="mcard__link" target="_blank" rel="noopener">
+                    <span class="mcard__file-icon" aria-label="PDF">📄</span>
+                    Tugas 11 - Integral Fungsi
+                  </a>
+                </li>
+              </ul>
+              <button class="mcard__toggle" aria-expanded="false">
+                <span class="mcard__toggle-text">Lihat Semua</span>
+                <svg class="mcard__toggle-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <footer class="mcard__footer">
+            <a href="https://github.com/mfebkhamim/Catatan-Kuliah/tree/main/Matematika%201" target="_blank" rel="noopener" class="mcard__github">
+              <svg class="mcard__github-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+              </svg>
+              Repo GitHub
+            </a>
+          </footer>
+        </article>
+
+        <!-- ─ CARD 2: Geometri Analitik (has GitHub) ─ -->
+        <article class="mcard" role="listitem"
+          data-category="semester-1 mahasiswa"
+          data-keywords="geometri analitik elips lingkaran matematika"
+          data-title="Aljabar Linear">
+
+          <div class="mcard__ribbon">Semester 1 · Mahasiswa</div>
+
+          <div class="mcard__body">
+            <p class="mcard__meta">Mahasiswa &nbsp;·&nbsp; Institut Teknologi Sepuluh Nopember</p>
+            <h3 class="mcard__title">Geometri Analitik</h3>
+            <p class="mcard__desc">Tugas Mata Kuliah Geometri Analitik beserta latihan soal</p>
+
+            <div class="mcard__kw" aria-label="Kata kunci">
+              <span class="mkw">Geometri Analitik</span>
+              <span class="mkw">Matematika</span>
+              <span class="mkw">Elips</span>
+              <span class="mkw">Lingkaran</span>
+            </div>
+
+            <div class="mcard__materi">
+              <p class="mcard__materi-label">Daftar Materi</p>
+              <ul class="mcard__list" aria-label="Daftar materi Geometri Analitik">
+                <li class="mcard__item">
+                  <a href="https://github.com/mfebkhamim/Catatan-Kuliah/tree/main/Geometri%20Analitik/Kumpulan%20Soal" class="mcard__link" target="_blank" rel="noopener">
+                    <span class="mcard__file-icon" aria-label="Google Drive">🔗</span>
+                    Kumpulan Soal
+                  </a>
+                </li>
+                <li class="mcard__item">
+                  <a href="Dokumen/Geometri Analitik/Tugas 1 - Konsep Dasar.pdf" class="mcard__link" target="_blank" rel="noopener">
+                    <span class="mcard__file-icon" aria-label="PDF">📄</span>
+                    Tugas 1 - Konsep Dasar
+                  </a>
+                </li>
+                <li class="mcard__item">
+                  <a href="Dokumen/Geometri Analitik/Tugas 2 - Persamaan Garis Lurus dan Lingkaran.pdf" class="mcard__link" target="_blank" rel="noopener">
+                    <span class="mcard__file-icon" aria-label="PDF">📄</span>
+                    Tugas 2 - Persamaan Garis Lurus dan Lingkaran
+                  </a>
+                </li>
+                <li class="mcard__item mcard__item--extra">
+                  <a href="Dokumen/Geometri Analitik/Tugas 3 - Parabola.pdf" class="mcard__link" target="_blank" rel="noopener">
+                    <span class="mcard__file-icon" aria-label="PDF">📄</span>
+                    Tugas 3 - Parabola
+                  </a>
+                </li>
+                <li class="mcard__item mcard__item--extra">
+                  <a href="Dokumen/Geometri Analitik/Tugas 4 - Elips.pdf" class="mcard__link" target="_blank" rel="noopener">
+                    <span class="mcard__file-icon" aria-label="PDF">📄</span>
+                    Tugas 4 - Elips
+                  </a>
+                </li>
+                <li class="mcard__item mcard__item--extra">
+                  <a href="#" class="mcard__link" target="_blank" rel="noopener">
+                    <span class="mcard__file-icon" aria-label="Google Drive">🔗</span>
+                    Ruang Vektor &amp; Subruang
+                  </a>
+                </li>
+              </ul>
+              <button class="mcard__toggle" aria-expanded="false">
+                <span class="mcard__toggle-text">Lihat Semua</span>
+                <svg class="mcard__toggle-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <footer class="mcard__footer">
+            <a href="https://github.com/mfebkhamim/Catatan-Kuliah/tree/main/Geometri%20Analitik" target="_blank" rel="noopener" class="mcard__github">
+              <svg class="mcard__github-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+              </svg>
+              Repo GitHub
+            </a>
+          </footer>
+        </article>
+
+        <!-- ─ CARD 3: Matematika 2 ─ -->
+        <article class="mcard" role="listitem"
+          data-category="semester-2 mahasiswa"
+          data-keywords="matematika kalkulus integral limit trigonometri barisan deret"
+          data-title="Aljabar Linear">
+
+          <div class="mcard__ribbon">Semester 2 · Mahasiswa</div>
+
+          <div class="mcard__body">
+            <p class="mcard__meta">Mahasiswa &nbsp;·&nbsp; Institut Teknologi Sepuluh Nopember</p>
+            <h3 class="mcard__title">Matematika 2</h3>
+            <p class="mcard__desc">Dokumen hasil belajar dan tugas-tugas mata kuliah Matematika 2 ITS Genap 2022/2023</p>
+
+            <div class="mcard__kw" aria-label="Kata kunci">
+              <span class="mkw">Matematika 2</span>
+              <span class="mkw">Kalkulus</span>
+              <span class="mkw">Integral</span>
+              <span class="mkw">Limit</span>
+              <span class="mkw">Turunan</span>
+            </div>
+
+            <div class="mcard__materi">
+              <p class="mcard__materi-label">Daftar Materi</p>
+              <ul class="mcard__list" aria-label="Daftar materi Geometri Analitik">
+                <li class="mcard__item">
+                  <a href="https://github.com/mfebkhamim/Catatan-Kuliah/tree/main/Matematika%202/Kumpulan%20Soal" class="mcard__link" target="_blank" rel="noopener">
+                    <span class="mcard__file-icon" aria-label="Google Drive">🔗</span>
+                    Kumpulan Soal
+                  </a>
+                </li>
+                <li class="mcard__item">
+                  <a href="Dokumen/Matematika 2/Tugas 1 - Fungsi Transeden Logaritma Natural.pdf" class="mcard__link" target="_blank" rel="noopener">
+                    <span class="mcard__file-icon" aria-label="PDF">📄</span>
+                    Tugas 1 - Fungsi Transeden Logaritma Natural
+                  </a>
+                </li>
+                <li class="mcard__item">
+                  <a href="Dokumen/Matematika 2/Tugas 2 - Integral Invers Trigonometri dan Hiperbolik.pdf" class="mcard__link" target="_blank" rel="noopener">
+                    <span class="mcard__file-icon" aria-label="PDF">📄</span>
+                    Tugas 2 - Integral Invers Trigonometri dan Hiperbolik
+                  </a>
+                </li>
+                <li class="mcard__item mcard__item--extra">
+                  <a href="Dokumen/Matematika 2/Tugas 3 - Integral Invers Trigonometri.pdf" class="mcard__link" target="_blank" rel="noopener">
+                    <span class="mcard__file-icon" aria-label="PDF">📄</span>
+                    Tugas 3 - Integral Invers Trigonometri
+                  </a>
+                </li>
+                <li class="mcard__item mcard__item--extra">
+                  <a href="Dokumen/Matematika 2/Tugas 4 - Integral Fungsi Trigonometri dan Integrasi Rasional.pdf" class="mcard__link" target="_blank" rel="noopener">
+                    <span class="mcard__file-icon" aria-label="PDF">📄</span>
+                    Tugas 4 - Integral Fungsi Trigonometri dan Integrasi Rasional
+                  </a>
+                </li>
+                <li class="mcard__item mcard__item--extra">
+                  <a href="Dokumen/Matematika 2/Tugas 5 - Barisan dan Deret.pdf" class="mcard__link" target="_blank" rel="noopener">
+                    <span class="mcard__file-icon" aria-label="PDF">📄</span>
+                    Tugas 5 - Barisan dan Deret
+                  </a>
+                </li>
+                <li class="mcard__item mcard__item--extra">
+                  <a href="Dokumen/Matematika 2/Tugas Asistensi.pdf" class="mcard__link" target="_blank" rel="noopener">
+                    <span class="mcard__file-icon" aria-label="PDF">📄</span>
+                    Tugas Asistensi
+                  </a>
+                </li>
+              </ul>
+              <button class="mcard__toggle" aria-expanded="false">
+                <span class="mcard__toggle-text">Lihat Semua</span>
+                <svg class="mcard__toggle-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- ── empty state ── -->
+        <div class="mat-empty" id="matEmpty" hidden aria-live="polite">
+          <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+            <circle cx="30" cy="30" r="18" stroke="currentColor" stroke-width="2.5"/>
+            <path d="M43 43l10 10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M23 30h14M30 23v14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+          <p>Tidak ada materi yang cocok.</p>
+          <span>Coba ubah kata kunci atau pilih kategori lain.</span>
+        </div>
+
+      </div><!-- /mat-grid -->
+
+    </div><!-- /materials__layout -->
+  </section>
+
+  <section class="contact" id="contact" aria-label="Saran dan Kontribusi Materi">
+    <div class="contact__inner">
+      
+      <div class="contact__left" data-reveal>
+        <span class="contact__eyebrow">Kolaborasi Akademik</span>
+        <h2 class="contact__title">Saran, Perbaikan, &amp; Tambahan Materi</h2>
+        <p class="contact__desc">
+          Menemukan salah ketik, kekeliruan rumus kalkulus, atau galat pada analisis rangkaian? 
+          Atau Anda memiliki catatan pribadi berkualitas yang ingin diarsipkan di platform ini? 
+          Mari berkontribusi membangun ruang belajar yang lebih akurat dan inklusif.
+        </p>
+      </div>
+
+      <div class="contact__right" data-reveal data-reveal-delay="150">
+        <div class="contact__form-box">
+          <form class="cform" action="https://formspree.io/f/xoqgleye" method="POST" id="contributionForm" novalidate>
+            
+            <div class="cform__group">
+              <label class="cform__label" for="formName">Nama Lengkap</label>
+              <input class="cform__input" type="text" id="formName" name="name" placeholder="Masukkan nama lengkap Anda" required />
+            </div>
+
+            <div class="cform__group">
+              <label class="cform__label" for="formEmail">Alamat Email</label>
+              <input class="cform__input" type="email" id="formEmail" name="email" placeholder="nama@mahasiswa.its.ac.id" required />
+            </div>
+
+            <div class="cform__group">
+              <label class="cform__label" for="formSubject">Subjek Kontribusi</label>
+              <div class="cform__select-wrapper">
+                <select class="cform__select" id="formSubject" name="subject" required>
+                  <option value="" disabled selected hidden>Pilih kategori tujuan...</option>
+                  <option value="Tambahan Materi Baru">Tambahan Materi Baru</option>
+                  <option value="Koreksi / Perbaikan Materi">Koreksi / Perbaikan Materi</option>
+                  <option value="Saran Fitur Web">Saran Fitur Web</option>
+                  <option value="Pertanyaan Umum">Pertanyaan Umum</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="cform__group">
+              <label class="cform__label" for="formMessage">Isi Pesan / Tautan Berkas</label>
+              <textarea class="cform__textarea" id="formMessage" name="message" rows="5" placeholder="Tuliskan detail koreksi atau sertakan tautan Google Drive untuk kontribusi berkas materi baru..." required></textarea>
+            </div>
+
+            <button class="btn btn--submit" type="submit" id="formSubmitBtn">
+              Kirim Formulir
+              <svg class="btn__icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M2.5 10h15M11.667 4.167L17.5 10l-5.833 5.833" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+      
+      <div class="footer__col footer__col--profile">
+        <h3 class="footer__logo">FeBelajar</h3>
+        <p class="footer__author">Dikembangkan oleh <span class="footer__highlight">Mohammad Febryan Khamim</span></p>
+        <p class="footer__bio">
+          Mahasiswa Departemen Matematika, Institut Teknologi Sepuluh Nopember (ITS). 
+        </p>
+      </div>
+
+      <nav class="footer__col footer__col--links" aria-label="Navigasi Kaki">
+        <h4 class="footer__title">Tautan Pintas</h4>
+        <ul class="footer__list">
+          <li><a href="#hero" class="footer__link">Beranda</a></li>
+          <li><a href="#materials" class="footer__link">Daftar Materi</a></li>
+          <li><a href="#contact" class="footer__link">Kontak Kontribusi</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer__col footer__col--channels">
+        <h4 class="footer__title">Saluran Komunikasi</h4>
+        <div class="footer__channels">
+          
+          <a href="https://github.com/username" target="_blank" rel="noopener" class="footer__channel-item" aria-label="GitHub Profil">
+            <svg class="footer__channel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+            </svg>
+            <span>GitHub</span>
+          </a>
+
+          <a href="mailto:username@student.its.ac.id" class="footer__channel-item" aria-label="Email Institusi">
+            <svg class="footer__channel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            <span>Email ITS</span>
+          </a>
+
+          <a href="#" class="footer__channel-item" aria-label="Website Portofolio Utama">
+            <svg class="footer__channel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="2" y1="12" x2="22" y2="12"/>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+            <span>Portofolio</span>
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer__base">
+      <p>&copy; 2026 FeBelajar · Mohammad Febryan Khamim. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

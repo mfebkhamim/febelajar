@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Simulasi Kontak FeBelajar</title>
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; background: #FEFEFA; padding: 40px; color: #33353A; }
+    .box { max-width: 500px; margin: 0 auto; background: white; padding: 30px; border-radius: 14px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #E8EAF2; }
+    h2 { color: #3852B4; margin-bottom: 20px; }
+    .group { display: flex; flex-direction: column; margin-bottom: 15px; }
+    label { font-size: 0.85rem; font-weight: 600; margin-bottom: 5px; }
+    input, textarea, select { padding: 12px; border: 1.5px solid #E8EAF2; border-radius: 8px; font-size: 0.92rem; outline: none; background: #F5F6FB; }
+    input:focus, textarea:focus, select:focus { border-color: #3852B4; background: white; }
+    button { background: #3852B4; color: white; padding: 14px; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; margin-top: 10px; width: 100%; }
+    button:hover { background: #2A3D8F; }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <h2>Form Kontak Kontribusi</h2>
+    
+    <!-- PENTING: Masukkan alamat email Anda sendiri di bawah ini untuk tes! -->
+    <form action="https://formspree.io/f/xykvqwwn" method="POST">
+      
+      <div class="group">
+        <label>Nama Lengkap</label>
+        <input type="text" name="Nama" placeholder="Masukkan nama kamu" required>
+      </div>
+
+      <div class="group">
+        <label>Alamat Email</label>
+        <input type="email" name="Email" placeholder="nama@email.com" required>
+      </div>
+
+      <div class="group">
+        <label>Subjek Masukan</label>
+        <select name="Subjek">
+          <option>Tambahan Materi Baru</option>
+          <option>Koreksi / Perbaikan Materi</option>
+          <option>Saran Fitur Web</option>
+        </select>
+      </div>
+
+      <div class="group">
+        <label>Isi Pesan / Saran</label>
+        <textarea name="Pesan" rows="4" placeholder="Tulis masukan kamu di sini..." required></textarea>
+      </div>
+
+      <button type="submit">Kirim Pesan Nyata</button>
+    </form>
+  </div>
+
+</body>
+</html>
