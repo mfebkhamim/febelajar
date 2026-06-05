@@ -241,9 +241,6 @@ a {
 .navbar__burger.is-open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
 .navbar__burger.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-/* ═══════════════════════════════════════════════════════════
-   HERO
-═══════════════════════════════════════════════════════════ */
 .hero {
   position: relative;
   min-height: 100dvh;
@@ -253,8 +250,20 @@ a {
   padding-block: calc(var(--navbar-h) + 40px) 60px;
   padding-inline: clamp(20px, 6vw, 80px);
   overflow: hidden;
+ 
+  /* ✅ FIX 1: Ensure hero always spans full viewport width */
+  width: 100%;
+ 
+  /* ✅ FIX 2: Remove any inherited max-width constraint that boxes it in */
+  max-width: none;
+ 
+  /* ✅ FIX 3: Kill any auto centering margin — centering belongs on .hero__inner, not here */
+  margin-inline: 0;
+ 
+  /* ✅ FIX 4: padding-inline must not eat into the background — border-box ensures it doesn't */
+  box-sizing: border-box;
 }
-
+ 
 /* decorative background grid lines */
 .hero__grid {
   position: absolute;
@@ -271,7 +280,7 @@ a {
   height: 100%;
   flex-shrink: 0;
 }
-
+ 
 /* decorative orbs */
 .hero__orb {
   position: absolute;
@@ -293,8 +302,8 @@ a {
   bottom: 5%;
   left: 5%;
 }
-
-/* two-column inner */
+ 
+/* two-column inner — this is where centering & max-width live */
 .hero__inner {
   position: relative;
   z-index: 1;
@@ -306,14 +315,14 @@ a {
   gap: clamp(40px, 6vw, 80px);
   align-items: center;
 }
-
+ 
 /* ── LEFT COLUMN ── */
 .hero__left {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-
+ 
 /* eyebrow label */
 .hero__eyebrow {
   display: inline-flex;
@@ -334,7 +343,7 @@ a {
   flex-shrink: 0;
   animation: pulse-dot 2.4s ease-in-out infinite;
 }
-
+ 
 /* main title */
 .hero__title {
   font-family: 'Segoe UI', sans-serif;
@@ -361,7 +370,7 @@ a {
   border-radius: 2px;
   opacity: 0.5;
 }
-
+ 
 /* tagline */
 .hero__tagline {
   font-family: 'Playfair Display', serif;
@@ -371,7 +380,7 @@ a {
   line-height: 1.4;
   opacity: 0.95;
 }
-
+ 
 /* description */
 .hero__desc {
   font-size: clamp(0.9rem, 1.6vw, 1.05rem);
@@ -379,7 +388,7 @@ a {
   line-height: 1.7;
   max-width: 48ch;
 }
-
+ 
 /* CTA row */
 .hero__cta-row {
   display: flex;
@@ -387,7 +396,7 @@ a {
   gap: 12px;
   margin-top: 4px;
 }
-
+ 
 /* stats strip */
 .hero__stats {
   display: flex;
@@ -425,13 +434,13 @@ a {
   background: var(--white-a18);
   flex-shrink: 0;
 }
-
+ 
 /* ── RIGHT COLUMN — profile card ── */
 .hero__right {
   display: flex;
   justify-content: center;
 }
-
+ 
 .hero__card {
   position: relative;
   background: var(--white-a10);
@@ -457,7 +466,7 @@ a {
     0 16px 48px rgba(0, 0, 0, 0.28),
     inset 0 1px 0 var(--white-a30);
 }
-
+ 
 /* corner accent brackets */
 .hero__card-corner {
   position: absolute;
@@ -471,7 +480,7 @@ a {
 .hero__card-corner--tr { top: 12px; right: 12px; border-width: 2px 2px 0 0; border-radius: 0 4px 0 0; }
 .hero__card-corner--bl { bottom: 12px; left: 12px; border-width: 0 0 2px 2px; border-radius: 0 0 0 4px; }
 .hero__card-corner--br { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; border-radius: 0 0 4px 0; }
-
+ 
 /* photo wrap */
 .hero__photo-wrap {
   position: relative;
@@ -494,7 +503,7 @@ a {
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
   display: block;
 }
-
+ 
 /* star badge on photo */
 .hero__photo-badge {
   position: absolute;
@@ -516,7 +525,7 @@ a {
   fill: var(--blue-deeper);
   stroke-width: 1.5;
 }
-
+ 
 /* profile text */
 .hero__profile {
   display: flex;
@@ -552,6 +561,29 @@ a {
   width: 100%;
   flex-wrap: wrap;
 }
+ 
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE — mobile fix (preserves full-width on desktop)
+═══════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .hero__inner {
+    grid-template-columns: 1fr;
+  }
+ 
+  .hero__right {
+    order: -1;
+  }
+ 
+  .hero__card {
+    max-width: 300px;
+  }
+ 
+  .hero__stats {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
 
 /* ═══════════════════════════════════════════════════════════
    BUTTONS
